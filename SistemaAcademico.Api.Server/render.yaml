@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: biotecher
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /home.html

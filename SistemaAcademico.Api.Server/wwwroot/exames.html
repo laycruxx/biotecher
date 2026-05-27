@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioTecher - Exames de A a Z</title>
+    <link rel="stylesheet" href="/css/exame.css?v=7">
+    <link rel="stylesheet" href="/css/common.css?v=14">
+</head>
+<body>
+        <header class="app-header">
+        <nav class="site-nav">
+            <a class="brand-link" href="/home.html" data-nav>
+                <img class="brand-logo brand-logo-wide" src="/img/logo.png?v=6" alt="BioTecher">
+            </a>
+            <div class="nav-links">
+                <a class="nav-button" href="/home.html" data-nav>Início</a>
+                <a class="nav-button active" href="/exames.html" data-nav>Exames</a>
+                <a class="nav-button" href="/analise.html" data-nav>Analisar Exame</a>
+                <a class="nav-button" href="/contato.html" data-nav>Contato</a>
+                <a class="nav-button" href="/lgpd.html" data-nav>LGPD</a>
+                <a class="nav-button" href="/login.html" data-nav>Entrar</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro-section">
+            <p class="eyebrow">Guia educativo</p>
+            <h1 class="page-title">Exames de A a Z</h1>
+            <p class="page-subtitle">Procure por nome, &oacute;rg&atilde;o ou palavra do dia a dia. Exemplo: a&ccedil;&uacute;car, f&iacute;gado, rim, tireoide.</p>
+        </section>
+
+        <section class="medical-note" aria-label="Aviso importante">
+            <strong>Aviso importante:</strong> este conte&uacute;do &eacute; educativo e n&atilde;o substitui a avalia&ccedil;&atilde;o de um profissional de sa&uacute;de.
+        </section>
+
+        <section class="search-panel">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Digite o exame ou uma palavra relacionada..." id="searchInput" autocomplete="off">
+                <button type="button" class="search-button" id="searchButton">Buscar</button>
+            </div>
+            <div class="quick-searches" id="quickSearches"></div>
+        </section>
+
+        <section class="alphabet-section">
+            <h2 class="section-title">Navegue pelas letras</h2>
+            <div class="alphabet-container" id="alphabetContainer"></div>
+        </section>
+
+        <section class="saved-section" id="savedSection" hidden>
+            <div class="section-heading">
+                <h2>Exames salvos</h2>
+                <button type="button" class="text-button" id="clearFavorites">Limpar favoritos</button>
+            </div>
+            <div class="chip-list" id="favoritesList"></div>
+        </section>
+
+        <section class="recent-section" id="recentSection" hidden>
+            <div class="section-heading">
+                <h2>Vistos recentemente</h2>
+                <button type="button" class="text-button" id="clearHistory">Limpar hist&oacute;rico</button>
+            </div>
+            <div class="chip-list" id="recentList"></div>
+        </section>
+
+        <section class="results-section">
+            <div class="section-heading">
+                <h2>Lista de exames</h2>
+                <p class="results-counter" id="resultsCounter"></p>
+            </div>
+            <div class="exams-container" id="examsContainer"></div>
+        </section>
+    </main>
+
+    <div class="modal" id="examModal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-header">
+                <div>
+                    <p class="modal-category" id="modalCategory">Categoria</p>
+                    <h2 class="modal-title" id="modalTitle">Exame</h2>
+                </div>
+                <button type="button" class="close-btn" id="closeModal" aria-label="Fechar">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="/js/exame.js?v=7"></script>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <p>Informação laboratorial clara, acompanhamento seguro e comunicação simples entre paciente e laboratório.</p>
+            </div>
+            <div class="footer-contact">
+                <h2>Contato</h2>
+                <a href="mailto:atendimento@biotecherlab.com">atendimento@biotecherlab.com</a>
+                <a href="tel:+557144558899">(71) 4455-8899</a>
+                <span>Salvador - BA</span>
+            </div>
+            <div class="footer-social">
+                <h2>Redes sociais</h2>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram fictício do BioTecher">Instagram</a>
+                    <a href="#" aria-label="LinkedIn fictício do BioTecher">LinkedIn</a>
+                    <a href="#" aria-label="WhatsApp fictício do BioTecher">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>BioTecher © 2026</span>
+            <a href="/lgpd.html">Privacidade e proteção de dados</a>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+

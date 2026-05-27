@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioTecher - Sistema Interno</title>
+    <link rel="stylesheet" href="/css/interno.css?v=3">
+    <link rel="stylesheet" href="/css/common.css?v=14">
+</head>
+<body>
+    <script src="/js/auth-guard.js"></script>
+
+        <header class="app-header">
+        <nav class="site-nav">
+            <a class="brand-link" href="/home.html" data-nav>
+                <img class="brand-logo brand-logo-wide" src="/img/logo.png?v=6" alt="BioTecher">
+            </a>
+            <div class="nav-links">
+                <a class="nav-button" href="/home.html" data-nav>Início</a>
+                <a class="nav-button" href="/exames.html" data-nav>Exames</a>
+                <a class="nav-button" href="/analise.html" data-nav>Analisar Exame</a>
+                <a class="nav-button" href="/contato.html" data-nav>Contato</a>
+                <a class="nav-button" href="/lgpd.html" data-nav>LGPD</a>
+                <a class="nav-button active" href="/interno.html" data-nav>Sistema Interno</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="internal-hero">
+            <div>
+                <p class="eyebrow">Área restrita</p>
+                <h1 class="page-title">Acompanhamento de exames</h1>
+                <p class="page-subtitle">Ambiente interno com acesso para paciente consultar protocolo e para funcionário acompanhar as solicitações do laboratório.</p>
+            </div>
+            <div class="internal-actions">
+                <div class="mode-switch" aria-label="Tipo de acesso">
+                    <button type="button" class="mode-btn active" data-mode="paciente">Paciente</button>
+                    <button type="button" class="mode-btn" data-mode="funcionario">Funcionário</button>
+                </div>
+                <button type="button" class="logout-btn logout-action">Sair</button>
+            </div>
+        </section>
+
+        <section class="access-panel paciente-panel" data-view="paciente">
+            <div class="panel-copy">
+                <p class="eyebrow">Área do paciente</p>
+                <h2>Consulte seu exame pelo protocolo</h2>
+                <p>Digite o código recebido no atendimento para acompanhar se a solicitação foi aceita, se a coleta está em andamento, se está em análise ou se o resultado já foi liberado.</p>
+            </div>
+            <div class="protocol-card">
+                <div class="panel-heading">
+                    <h2>Consulta por protocolo</h2>
+                    <p>Protocolo de exemplo: BT2025001234</p>
+                </div>
+                <form class="protocol-form" id="protocolForm">
+                    <input type="text" id="protocolInput" placeholder="BT2025001234" autocomplete="off">
+                    <button type="submit">Consultar</button>
+                </form>
+                <div class="protocol-result" id="protocolResult"></div>
+            </div>
+        </section>
+
+        <section class="employee-panel" data-view="funcionario" hidden>
+            <div class="employee-heading">
+                <div>
+                    <p class="eyebrow">Área do funcionário</p>
+                    <h2>Painel operacional do laboratório</h2>
+                    <p>Controle de solicitações cadastradas, responsáveis técnicos, status de processamento e liberação dos resultados.</p>
+                </div>
+
+            </div>
+
+            <section class="stats-dashboard" aria-label="Resumo de exames">
+                <article class="stat-card"><span class="stat-label">Total</span><strong class="stat-number" id="totalExams">0</strong></article>
+                <article class="stat-card"><span class="stat-label">Em coleta</span><strong class="stat-number" id="collectingExams">0</strong></article>
+                <article class="stat-card"><span class="stat-label">Em análise</span><strong class="stat-number" id="analyzingExams">0</strong></article>
+                <article class="stat-card"><span class="stat-label">Liberados</span><strong class="stat-number" id="completedExams">0</strong></article>
+            </section>
+
+            <section class="filters-bar" id="filtersBar" aria-label="Filtros de status">
+                <button class="filter-btn active" data-status="todos">Todos</button>
+                <button class="filter-btn" data-status="solicitado">Solicitados</button>
+                <button class="filter-btn" data-status="aceito">Aceitos</button>
+                <button class="filter-btn" data-status="coletando">Em coleta</button>
+                <button class="filter-btn" data-status="analisando">Em análise</button>
+                <button class="filter-btn" data-status="liberado">Liberados</button>
+            </section>
+
+            <section class="exams-container">
+                <div class="exams-header">
+                    <div>
+                        <div class="exams-title">Solicitações cadastradas</div>
+                        <p>Registros de solicitações cadastradas no fluxo interno do BioTecher.</p>
+                    </div>
+                </div>
+                <div id="examsList"></div>
+            </section>
+        </section>
+    </main>
+
+    <div class="modal" id="examModal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true">
+            <div class="modal-header">
+                <div>
+                    <div class="modal-title" id="modalTitle">Exame</div>
+                    <div class="modal-subtitle" id="modalSubtitle">Protocolo</div>
+                </div>
+                <button class="close-btn" id="closeModal" type="button" aria-label="Fechar">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="timeline-container" id="modalTimeline"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/interno.js?v=3"></script>
+</body>
+</html>
+
+

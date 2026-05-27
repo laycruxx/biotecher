@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css?v=9">
+    <title>BioTecher - Login</title>
+    <link rel="stylesheet" href="/css/common.css?v=14">
+</head>
+<body>
+    <header class="app-header">
+        <nav class="site-nav">
+            <a class="brand-link" href="/home.html" data-nav>
+                <img class="brand-logo brand-logo-wide" src="/img/logo.png?v=6" alt="BioTecher">
+            </a>
+            <div class="nav-links">
+                <a class="nav-button" href="/home.html" data-nav>Início</a>
+                <a class="nav-button" href="/exames.html" data-nav>Exames</a>
+                <a class="nav-button" href="/analise.html" data-nav>Analisar Exame</a>
+                <a class="nav-button" href="/contato.html" data-nav>Contato</a>
+                <a class="nav-button" href="/lgpd.html" data-nav>LGPD</a>
+                <a class="nav-button active" href="/login.html" data-nav>Entrar</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="login-shell">
+        <section class="login-panel">
+            <form id="loginForm" class="login-card">
+                <p class="eyebrow">Acesso BioTecher</p>
+                <h1 id="formTitle">Login BioTecher</h1>
+                <p class="login-hint" id="formHint">Acesso interno do laboratório</p>
+
+                <div class="access-choice" aria-label="Tipo de acesso">
+                    <button type="button" class="access-option active" data-role="Funcionario">
+                        <span>Funcionário</span>
+                        <small>Equipe do laboratório</small>
+                    </button>
+                    <button type="button" class="access-option" data-role="Paciente">
+                        <span>Paciente</span>
+                        <small>Acompanhar exames</small>
+                    </button>
+                </div>
+                <input type="hidden" id="accessType" name="accessType" value="Funcionario">
+
+                <div class="input-box">
+                    <input id="username" name="username" placeholder="Usuário" type="text" autocomplete="username" required>
+                    <i class="bx bxs-user"></i>
+                </div>
+
+                <div class="input-box password-box">
+                    <input id="password" name="password" placeholder="Senha" type="password" autocomplete="current-password" required>
+                    <button type="button" class="password-toggle" id="togglePassword" aria-label="Mostrar senha">
+                        <i class="bx bx-show"></i>
+                    </button>
+                </div>
+
+                <div class="login-tools">
+                    <label class="remember"><input type="checkbox" id="rememberMe"> Lembrar acesso</label>
+                    <button type="button" class="text-action" id="forgotPassword">Esqueci a senha</button>
+                </div>
+
+                <label class="consent" id="consentRow"><input type="checkbox" id="privacyConsent"> Aceito o uso dos dados conforme a <a href="/lgpd.html">LGPD</a>.</label>
+                <p id="loginMessage" class="login-message"></p>
+
+                <button type="submit" class="login" id="submitButton">Entrar</button>
+
+                <div class="register-link">
+                    <p id="toggleText">Não tem conta? <button type="button" id="toggleMode">Cadastre-se</button></p>
+                </div>
+            </form>
+        </section>
+
+        <aside class="login-visual" aria-label="Ilustração do BioTecher no laboratório">
+            <img id="loginVisualImage" src="/img/login-funcionario.jpg?v=5" data-default-src="/img/login-default.jpg?v=5" data-funcionario-src="/img/login-funcionario.jpg?v=5" data-paciente-src="/img/login-paciente.jpg?v=5" alt="Atendimento BioTecher no laboratório">
+            <div class="visual-note">
+                <strong>Rotina do laboratório</strong>
+                <span>Área da equipe para acompanhar solicitações, coletas, análises e resultados.</span>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <p>Informação laboratorial clara, acompanhamento seguro e comunicação simples entre paciente e laboratório.</p>
+            </div>
+            <div class="footer-contact">
+                <h2>Contato</h2>
+                <a href="mailto:atendimento@biotecherlab.com">atendimento@biotecherlab.com</a>
+                <a href="tel:+557144558899">(71) 4455-8899</a>
+                <span>Salvador - BA</span>
+            </div>
+            <div class="footer-social">
+                <h2>Redes sociais</h2>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram fictício do BioTecher">Instagram</a>
+                    <a href="#" aria-label="LinkedIn fictício do BioTecher">LinkedIn</a>
+                    <a href="#" aria-label="WhatsApp fictício do BioTecher">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>BioTecher © 2026</span>
+            <a href="/lgpd.html">Privacidade e proteção de dados</a>
+        </div>
+    </footer>
+    <script src="/js/login.js?v=10"></script>
+</body>
+</html>
+
+

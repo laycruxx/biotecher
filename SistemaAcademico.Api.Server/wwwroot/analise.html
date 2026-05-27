@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioTecher - Análise de Exames</title>
+    <link rel="stylesheet" href="/css/analise.css?v=3">
+    <link rel="stylesheet" href="/css/common.css?v=14">
+</head>
+<body>
+        <header class="app-header">
+        <nav class="site-nav">
+            <a class="brand-link" href="/home.html" data-nav>
+                <img class="brand-logo brand-logo-wide" src="/img/logo.png?v=6" alt="BioTecher">
+            </a>
+            <div class="nav-links">
+                <a class="nav-button" href="/home.html" data-nav>Início</a>
+                <a class="nav-button" href="/exames.html" data-nav>Exames</a>
+                <a class="nav-button active" href="/analise.html" data-nav>Analisar Exame</a>
+                <a class="nav-button" href="/contato.html" data-nav>Contato</a>
+                <a class="nav-button" href="/lgpd.html" data-nav>LGPD</a>
+                <a class="nav-button" href="/login.html" data-nav>Entrar</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-head">
+            <p class="eyebrow">Ferramenta educativa</p>
+            <h1>Análise orientativa de exames</h1>
+            <p>Preencha alguns valores do laudo para receber uma leitura simples, com sinalização visual e observações gerais.</p>
+        </section>
+
+        <section class="medical-warning">
+            <strong>Atenção:</strong> esta ferramenta não fecha diagnóstico e não substitui avaliação médica. Os valores de referência podem variar conforme idade, sexo, método e laboratório.
+        </section>
+        <section class="upload-panel" aria-label="Envio de laudo para análise">
+            <div>
+                <p class="eyebrow">Leitura do laudo</p>
+                <h2>Enviar foto ou PDF do exame</h2>
+                <p>Envie uma imagem ou PDF do modelo BioTecher. O sistema identifica os principais valores do hemograma e preenche a análise automaticamente.</p>
+            </div>
+            <label class="upload-box" for="examFile">
+                <input type="file" id="examFile" accept="image/*,.pdf,application/pdf">
+                <span>Selecionar arquivo</span>
+                <small>PDF, PNG, JPG ou foto do celular</small>
+            </label>
+            <div class="upload-status" id="uploadStatus">Nenhum arquivo enviado.</div>
+            <div class="upload-preview" id="uploadPreview" hidden></div>
+        </section>
+
+        <section class="analyzer-layout">
+            <form class="analysis-form" id="analysisForm">
+                <div class="form-section">
+                    <div class="section-title">
+                        <span>01</span>
+                        <h2>Perfil do paciente</h2>
+                    </div>
+                    <div class="profile-grid">
+                        <label>
+                            Nome do paciente
+                            <input type="text" id="patientName" placeholder="Opcional">
+                        </label>
+                        <label>
+                            Perfil de referência
+                            <select id="profileType">
+                                <option value="adulto">Adulto</option>
+                                <option value="crianca">Criança</option>
+                                <option value="gestante">Gestante</option>
+                                <option value="idoso">Idoso</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="section-title">
+                        <span>02</span>
+                        <h2>Hemograma</h2>
+                    </div>
+                    <div class="input-grid">
+                        <label>Hemoglobina (g/dL)<input type="number" step="0.1" name="hemoglobina" placeholder="Ex: 13.5"></label>
+                        <label>Hematócrito (%)<input type="number" step="0.1" name="hematocrito" placeholder="Ex: 40"></label>
+                        <label>Leucócitos (/mm³)<input type="number" step="1" name="leucocitos" placeholder="Ex: 7200"></label>
+                        <label>Plaquetas (/mm³)<input type="number" step="1" name="plaquetas" placeholder="Ex: 250000"></label>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="section-title">
+                        <span>03</span>
+                        <h2>Bioquímica</h2>
+                    </div>
+                    <div class="input-grid">
+                        <label>Glicemia em jejum (mg/dL)<input type="number" step="0.1" name="glicemia" placeholder="Ex: 92"></label>
+                        <label>Colesterol total (mg/dL)<input type="number" step="0.1" name="colesterol" placeholder="Ex: 180"></label>
+                        <label>Creatinina (mg/dL)<input type="number" step="0.01" name="creatinina" placeholder="Ex: 0.9"></label>
+                        <label>Ácido úrico (mg/dL)<input type="number" step="0.1" name="acidoUrico" placeholder="Ex: 5.2"></label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit">Analisar valores</button>
+                    <button type="button" class="secondary" id="clearAnalysis">Limpar</button>
+                </div>
+            </form>
+
+            <aside class="analysis-result" id="analysisResult">
+                <div class="empty-result">
+                    <span>BT</span>
+                    <h2>Aguardando valores</h2>
+                    <p>Preencha os campos do laudo para visualizar a interpretação orientativa.</p>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <script src="/js/analise.js?v=7"></script>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <p>Informação laboratorial clara, acompanhamento seguro e comunicação simples entre paciente e laboratório.</p>
+            </div>
+            <div class="footer-contact">
+                <h2>Contato</h2>
+                <a href="mailto:atendimento@biotecherlab.com">atendimento@biotecherlab.com</a>
+                <a href="tel:+557144558899">(71) 4455-8899</a>
+                <span>Salvador - BA</span>
+            </div>
+            <div class="footer-social">
+                <h2>Redes sociais</h2>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram fictício do BioTecher">Instagram</a>
+                    <a href="#" aria-label="LinkedIn fictício do BioTecher">LinkedIn</a>
+                    <a href="#" aria-label="WhatsApp fictício do BioTecher">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>BioTecher © 2026</span>
+            <a href="/lgpd.html">Privacidade e proteção de dados</a>
+        </div>
+    </footer>
+</body>
+</html>
+

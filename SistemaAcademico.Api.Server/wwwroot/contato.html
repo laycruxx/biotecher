@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioTecher - Contato</title>
+    <link rel="stylesheet" href="/css/contato.css?v=2">
+    <link rel="stylesheet" href="/css/common.css?v=14">
+</head>
+<body>
+        <header class="app-header">
+        <nav class="site-nav">
+            <a class="brand-link" href="/home.html" data-nav>
+                <img class="brand-logo brand-logo-wide" src="/img/logo.png?v=6" alt="BioTecher">
+            </a>
+            <div class="nav-links">
+                <a class="nav-button" href="/home.html" data-nav>Início</a>
+                <a class="nav-button" href="/exames.html" data-nav>Exames</a>
+                <a class="nav-button" href="/analise.html" data-nav>Analisar Exame</a>
+                <a class="nav-button active" href="/contato.html" data-nav>Contato</a>
+                <a class="nav-button" href="/lgpd.html" data-nav>LGPD</a>
+                <a class="nav-button" href="/login.html" data-nav>Entrar</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contact-shell">
+        <section class="contact-intro">
+            <p class="eyebrow">Canal de d&uacute;vidas</p>
+            <h1>Fale com o BioTecher</h1>
+            <p>Envie sua pergunta sobre exames ou sobre o acompanhamento de solicitações. Nossa equipe usa esse canal para organizar o retorno e manter o atendimento registrado.</p>
+                                <figure class="contact-visual">
+                <img src="/img/duvidaum.png" alt="Pessoa com d&uacute;vida sobre exames m&eacute;dicos">
+            </figure>
+        </section>
+
+        <form class="form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="d128120a-a8dc-44af-a4d1-4584d123bd6a">
+            <input type="hidden" name="subject" value="Novo contato pelo BioTecher">
+            <input type="hidden" name="redirect" value="http://localhost:5000/obrigado.html">
+
+            <label for="name">Nome</label>
+            <input type="text" name="name" id="name" required>
+
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="message">Mensagem</label>
+            <textarea name="message" id="message" required></textarea>
+
+            <label class="consent"><input type="checkbox" required> Li e aceito o uso dos dados conforme a p&aacute;gina de <a href="/lgpd.html">LGPD</a>.</label>
+            <button type="submit">Enviar mensagem</button>
+        </form>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <p>Informação laboratorial clara, acompanhamento seguro e comunicação simples entre paciente e laboratório.</p>
+            </div>
+            <div class="footer-contact">
+                <h2>Contato</h2>
+                <a href="mailto:atendimento@biotecherlab.com">atendimento@biotecherlab.com</a>
+                <a href="tel:+557144558899">(71) 4455-8899</a>
+                <span>Salvador - BA</span>
+            </div>
+            <div class="footer-social">
+                <h2>Redes sociais</h2>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram fictício do BioTecher">Instagram</a>
+                    <a href="#" aria-label="LinkedIn fictício do BioTecher">LinkedIn</a>
+                    <a href="#" aria-label="WhatsApp fictício do BioTecher">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>BioTecher © 2026</span>
+            <a href="/lgpd.html">Privacidade e proteção de dados</a>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
